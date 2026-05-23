@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Resilience Navigator - UWB Tracking Hub</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #0d0f12;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #38bdf8;
+            margin-bottom: 5px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            color: #64748b;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        #mapCanvas {
+            background-color: #111827;
+            border: 2px solid #1e293b;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+        }
+        .dashboard-banner {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+            width: 500px;
+            justify-content: space-between;
+        }
+        .card {
+            background-color: #1e293b;
+            padding: 12px 20px;
+            border-radius: 6px;
+            flex: 1;
+            border-left: 4px solid #38bdf8;
+        }
+        .card-label {
+            font-size: 11px;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+        .card-value {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 4px;
+            color: #f8fafc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>RESILIENCE NAVIGATOR</h1>
+    <div class="subtitle">FKAB Foyer Indoor Positioning Core</div>
+
+    <canvas id="mapCanvas" width="500" height="500"></canvas>
+
+    <div class="dashboard-banner">
+        <div class="card">
+            <div class="card-label">Target Vector (Live)</div>
+            <div id="vectorReadout" class="card-value">X: 0.00m | Y: 0.00m</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Hardware Link</div>
+            <div id="statusReadout" class="card-value" style="color: #eab308;">INITIALIZING...</div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
